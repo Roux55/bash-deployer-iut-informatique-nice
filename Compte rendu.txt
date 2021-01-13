@@ -1,0 +1,36 @@
+PINET Marc S1TG5 ------ deployer.sh
+
+Les principales informations liées à ce compte rendu se trouve en commentaire dans le programme "deployer.sh" sur chaque ligne
+correspondante, où j'illustre la fonction de chaque commande ou instruction.
+Dans ce projet, beaucoup d'heures de documentation ont été rassemblées afin de fournir un code "propre" et qui fonctionne
+comme je souhaitais qu'il fonctionne.
+
+Pour ce qui est de la variable d'environnement REP_SALLES, je l'ai définie sur le dossier courant.
+
+Pour le traitement des arguments, je me suis inspiré du programme "traite_arguments.sh" ainsi que du cours afin de garantir le meilleur traitement
+possible (au lieu de faire plein de if)
+
+Mon programme gère partiellement toutes les erreurs possibles (au niveau de la syntaxe, le reste est du ressort des autres commandes utilisées)
+et les redirections de tout type fonctionnent.
+
+Je me suis inspiré de la commande ls --help afin d'élaborer une aide pour mon programme.
+
+Pour ce qui est de la verbose, la variable est volontairement présente sur toutes les commandes scp puisqu'elle est vide de base. Or, si l'utilisateur
+choisi de placer le mode verbose dans le déploiement, cette variable devient alors "-v" ce qui permet au scp de passer en mode verbose directement (cela m'évite
+d'avoir à faire des milliers de if). 
+
+Voici un exemple d'utiliation de ma commande, dans les deux cas (poste et salle)
+Il faut préalablement faire chmod +x deployer.sh et chmod +x ajoutersalle.sh
+Il faut aussi prévoir d'avoir une variable d'environnement REP_SALLES (ou du moins, l'écrire dans les deux programmes. Elle doit comporter le nom ou le chemin
+du dossier dans lequel le fichier FICHIER-DES-SALLES devra s'écrire. Ex: REP_SALLES="test/salle")
+
+Il n'y a pas d'ordre dans les arguments. Ici, les arguments sont sous forme "longue" mais peuvent s'écrire sous forme "courte"
+
+./deployer.sh --verbose --local ORIGINE/ --poste linserv-info-03 --distant DESTINATION/ --log logs.txt
+
+./deployer.sh --verbose --local ORIGINE/ --salle linserv-info --distant DESTINATION/ --log logs.txt
+
+/!\ Il faut que le fichier ajoutersalle.sh et deployer.sh se trouvent dans le même dossier car ils ont la même valeur de variable REP_SALLES (à savoir leur dossier courant).
+Ceci est intentionnel car cela évite les erreurs de chemin absolu et augmente la compatibilité avec les autres machines.
+
+Des sorties d'erreurs précisent sont prévues (de 0 à 2) en cas d'échec.
