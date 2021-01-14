@@ -25,35 +25,6 @@ du fichier des salles ajoutersalle.sh (partiellement déjà réalisée). La rép
 
 Le répertoire du projet sur SupportCours contient une série de scripts qu’il convient de comprendre et d’exécuter avec succès avant de commencer le développement de la commande choisie.
 
-NOM
- deployer – Déployer une arborescence locale ou un fichier sur une
-machine distante ou sur une série de machines distantes
-SYNOPSIS
- deployer [OPTION]...
-DESCRIPTION
- Déployer une arborescence locale ou un fichier sur une machine distante
-ou sur une série de machines distantes.
-Il n’y a pas d’ordre dans les options. En cas de présence multiple, la
-dernière (de gauche à droite) est prise en compte.
-L’argument <salle> est incompatible avec l’argument <poste>.
-Les options disponibles sont :
--l, --local <CHEMIN>
-Indique l’arborescence ou le fichier à transférer.
--d, --distant <CHEMIN>
-Indique le chemin où installer l’arborescence ou le fichier à transférer.
--p, --poste <NOM-POSTE> (e.g. {01, 03, 11}
-Nom du poste cible.
--s, --salle <NOM-SALLE> (e.g. « linserv-info »)
-Noms de la salle cible. Les noms des postes de la salle sont obtenus par
-filtrage du fichier des salles nommé FICHIER-DES-SALLES dont le répertoire
-d’accueil est indiqué par la variable d’environnement REP_SALLES.
-Cf. commande <ajouterposte>.
--v, --verbose
-Affiche les différentes étapes de la commande
--h, --help
-Affiche un résumé du manuel de la commande
--L, --log <FICHIER-LOCAL>
-Ecrit dans <FICHIER-LOCAL> tous les messages produits par la commande sur la
-sortie standard locale et sur la sortie d’erreur locale. 
+https://i.imgur.com/xoWrY8R.png
   
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
